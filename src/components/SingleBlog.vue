@@ -1,6 +1,8 @@
 <template>
   <div id="single-blog">
-    <h1>{{blogs}}</h1>
+    <h1>{{blogs.title}}</h1>
+    <article>{{blogs.content}}</article>
+    <button @click="deleteSingleBlog()">删除</button>
   </div>
 </template>
 
@@ -14,13 +16,21 @@ export default {
     }
   },
   created() {
-    this.$http.get('https://blog-e1331.firebaseio.com/posts/' + this.id + '.json') 
+    this.$http.get('https://blog-e1331.firebaseio.com/posts/' + this.id + ".json") 
     .then(function(data) {
       return data.json() ;
     })
     .then(function(data) {
-      this.blogs = data.title;
+      this.blogs = data;
     })
+  },
+  methods: {
+    deleteSingleBlog() {
+      this.$http.delete("https://blog-e1331.firebaseio.com/posts/" + this.id + ".json")
+      .then(response => {
+        this.$router.push({path: '/'})
+      })
+    }
   }
 }
 </script>

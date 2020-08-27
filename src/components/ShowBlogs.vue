@@ -7,7 +7,7 @@
         <h2>{{ blog.title }}</h2>
       </router-link>
       <article>
-        {{ blog.content }}
+        {{ blog.content | snippet }}
       </article>
     </div>
   </div>
@@ -62,5 +62,9 @@ export default {
   box-sizing: border-box;
   padding: 20px;
   margin: 20px 0;
+}
+.single-blog a{
+  text-decoration: none;
+  color: crimson;
 }
 </style>

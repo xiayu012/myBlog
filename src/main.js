@@ -16,6 +16,10 @@ const router = new VueRouter({
   routes: Routes,
   mode: "history"
 })
+//自定义过滤器
+Vue.filter("snippet",function(value){
+  return value.slice(0,100) + "......";
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -9,16 +9,6 @@
     <label>博客内容</label>
     <textarea v-model="blog.content"></textarea>
 
-    <p>分类：</p>
-    <div id="checkboxs">
-      <label>Vue.js</label>
-      <input type="checkbox" value="Vue.js" v-model="blog.catagories">
-      <label>H5</label>
-      <input type="checkbox" value="H5" v-model="blog.catagories">
-      <label>CSS3</label>
-      <input type="checkbox" value="CSS3" v-model="blog.catagories">
-    </div>
-
     <div id="addBlog">
       <button v-on:click.prevent="post" ><span>添加博客</span></button>
     </div>
@@ -35,10 +25,6 @@
       <p>博客标题：{{ blog.title }} </p>
       <p>博客内容：</p>  
       <p>{{ blog.content }}</p>
-      <p>博客分类：</p>
-      <ul>
-        <li v-for="catagory in blog.catagories" :key="catagory"> {{catagory}} </li>
-      </ul>
     </div>
 
   </div>
@@ -52,7 +38,6 @@ export default {
       blog:{
         title:"",
         content:"",
-        catagories:[]
       },
       submitted:false
     }
@@ -90,14 +75,6 @@ input[type="text"],textarea{
 }
 textarea{
   height: 200px;
-}
-#checkboxs label{
-  display: inline-block;
-  margin-top: 0;
-}
-#checkboxs input{
-  display: inline-block;
-  margin-right: 10px;
 }
 
 #addBlog {
