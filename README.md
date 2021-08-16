@@ -1,10 +1,7 @@
-# myBlog
-这个项目用的 Vue CLI 、Firebase 
+# myBlog (Vue,Firebase)
+Quick start:
 
-使用方法：
+The first step: download the project, open the terminal in the folder, enter npm install, press enter, wait a while, and then enter npm start press enter, wait a while
 
-第一步：下载该项目，在文件夹里打开终端输入npm install 按下回车，稍作等待，再输入npm start 按下回车，再等一会儿
 
-第二步：翻墙上外网（若已翻墙则忽略此步）
-
-第三步：打开浏览器访问http://localhost:8090/ 
+Step 2: Open the browser and visit http://localhost:8090/
